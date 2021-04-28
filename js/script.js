@@ -16,8 +16,14 @@ var app = new Vue({
 				//console.log(this.genreArray);
 			})
 		},
+		sortYears(cds) {
+			cds.sort((a, b) => {
+				return a.year - b.year
+			});
+		}
 	},
 	mounted() {
+		console.log('prima di axios', this.cdsArray);
 		axios
 			.get('https://flynn.boolean.careers/exercises/api/array/music')
 			.then((response) => {
@@ -29,10 +35,12 @@ var app = new Vue({
 				//console.log(getobj);
 
 				this.cdsArray = getobj;
-				console.log(this.cdsArray);
+				//console.log(this.cdsArray);
+
+				this.sortYears(this.cdsArray);
 
 				this.setGenre(this.cdsArray);
-			})	
+			});
 	}
 });
 
