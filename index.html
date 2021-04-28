@@ -17,29 +17,43 @@
   <div id="root">
 
     <header>
-      <img class="logo" src="img/download.png" alt="logo">
+      <div>
+        <img class="logo" src="img/download.png" alt="logo">
+      </div>
     </header>
 
     <main>
-      <div class="cds-container">
 
+      <div class="filter">
+
+        <span>Filtra per genere: </span>
+
+        <!-- TEST
+          <select v-model="selectedGenre"  @change="filterGenre(selectedGenre)" name="genre" id="genre">
+           <option value="all" selected >All</option>
+           <option v-for="genre in genreArray" :value="genre">{{ genre }}</option>
+          </select>
+        -->
+
+        <select v-model="selectedGenre" name="genre" id="genre">
+          <option value="all" selected>All</option>
+          <option v-for="genre in genreArray" :value="genre">{{ genre }}</option>
+        </select>        
+
+      </div>
+
+      <div class="cds-container">
         <!--cds-->
-        <div v-for="cd in cdsArray" class="cd">
+        <div v-for="cd in cdsArray" class="cd" v-if="cd.genre == selectedGenre || selectedGenre == 'all'">
           <img :src="cd.poster" alt="img-album">
           <div class="title">{{ cd.title }}</div>
           <div class="author">{{ cd.author }}</div>
           <div class="year">{{ cd.year }}</div>
         </div>
         <!--cds-->
-
-
       </div>
+
     </main>
-
-
-
-
-    
 
   </div>
   

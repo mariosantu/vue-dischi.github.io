@@ -2,6 +2,7 @@ var app = new Vue({
 
 	el: '#root',
 	data: {
+		selectedGenre: '',
 		cdsArray: [],
 	},
 	methods: {
@@ -24,3 +25,5 @@ var app = new Vue({
 			})	
 	}
 });
+
+

@@ -20,6 +20,10 @@ header {
   padding: 10px;
 }
 
+header > div {
+  display: inline-block;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -27,6 +31,15 @@ header {
 
 main {
   background-color: #1e2e3c;
+}
+
+main .filter {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.filter span {
+  color: white;
 }
 
 .cds-container {
