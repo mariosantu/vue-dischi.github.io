@@ -10,7 +10,7 @@ var app = new Vue({
 		setGenre(genres) {
 			genres.forEach((element) => {
 				// controllo i generi nell'array genreArray (no duplicati)
-				if(this.genreArray.indexOf(element.genre) == -1) { 
+				if(this.genreArray.indexOf(element.genre) == -1) { // meglio includes più chiaro
 					this.genreArray.push(element.genre);
 				}
 				//console.log(this.genreArray);

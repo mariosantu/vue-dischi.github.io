@@ -27,7 +27,6 @@
       <div class="filter">
 
         <span>Filtra per genere: </span>
-
         <select v-model="selectedGenre" name="genre" id="genre">
           <option value="all" selected>All</option>
           <option v-for="genre in genreArray" :value="genre">{{ genre }}</option>
